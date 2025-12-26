@@ -4,35 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OncoDynamics - Models</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
+<style>
+body {
+    margin: 0;
+    background-color: #0d1b2a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #0a2342;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-text {
+    font-size: 38px;
+    font-weight: bold;
+    color: #90e0ef;
+    text-shadow: 0 0 10px #72efff;
+}
+.nav-links a {
+    margin: 0 20px;
+    color: #90e0ef;
+    font-size: 22px;
+    text-decoration: none;
+}
+.graph-box {
+    width: 85%;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #1a3d5c;
+}
+.graph-box img {
+    width: 85%;
+    border-radius: 10px;
+}
+p { font-size: 20px; }
+</style>
+
+</head>
 <body>
 
-<header class="navbar">
-    <a href="home.html" class="logo-text">OncoDynamics</a>
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="models.html" class="active">Models</a>
+<div class="navbar">
+    <a href="index.html" class="logo-text">OncoDynamics</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
-    </nav>
-</header>
-
-<h1 class="page-title">Tumor Growth Models</h1>
-
-<div class="graph-box">
-    <img src="images/growth.png">
-    <p>Rapid exponential tumor growth in absence of treatment.</p>
+    </div>
 </div>
 
 <div class="graph-box">
-    <img src="images/shrink.png">
-    <p>Treatment reduces the growth rate leading to shrinkage.</p>
+    <img src="growth.png">
+    <p>Growth curve without treatment.</p>
 </div>
 
 <div class="graph-box">
-    <img src="images/comparison.png">
-    <p>Comparison reveals treatment success over time.</p>
+    <img src="shrink.png">
+    <p>Treatment reduces tumor size.</p>
+</div>
+
+<div class="graph-box">
+    <img src="comparison.png">
+    <p>Comparison between treated and untreated tumor.</p>
 </div>
 
 </body>
