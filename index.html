@@ -3,101 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OncoDynamics - Calculator</title>
-
-<style>
-    body {
-        margin: 0;
-        background-color: #061a2b;
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
-    }
-
-    .navbar {
-        background-color: #0a2342;
-        padding: 18px 55px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo img {
-        width: 300px;
-        height: auto;
-        filter: drop-shadow(0 0 18px #72efff);
-        transition: 0.25s;
-    }
-
-    .logo img:hover {
-        transform: scale(1.08);
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        margin-left: 30px;
-    }
-
-    .container {
-        background-color: #0d2e4f;
-        width: 60%;
-        margin: 120px auto;
-        padding: 40px;
-        border-radius: 12px;
-    }
-
-    input {
-        width: 70%;
-        padding: 14px;
-        font-size: 20px;
-        border-radius: 8px;
-        border: none;
-    }
-
-    button {
-        background-color: #0099ff;
-        color: white;
-        padding: 14px 24px;
-        font-size: 22px;
-        border-radius: 10px;
-        border: none;
-        margin-top: 20px;
-    }
-
-    h2 { font-size: 24px; color: #72efff; }
-</style>
-
-<script>
-function calcGrowth() {
-    let d = document.getElementById("days").value;
-    let result = Math.round(500 * Math.exp(0.18 * d));
-    document.getElementById("output").innerText = result;
-}
-</script>
-
+<title>OncoDynamics - Home</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
-    <a href="index.html" class="logo"><img src="logo.png"></a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="OncoDynamics Logo">
+    </a>
+    <nav>
+        <a href="index.html" class="active">Home</a>
         <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
-    </div>
+    </nav>
 </header>
 
-<div class="container">
-
-    <h1>Tumor Growth Prediction Calculator</h1>
-    <input id="days" type="number" placeholder="Enter days...">
-    <button onclick="calcGrowth()">Calculate</button>
-
-    <h2>Estimated Tumor Cells: <span id="output">—</span></h2>
-
-</div>
+<section class="hero">
+    <h1>Modeling Cancer Tumor Growth</h1>
+    <p>
+        Cancer tumors grow when cells divide uncontrollably. Understanding this mathematically helps doctors
+        predict tumor behavior, compare different treatments, and save patient lives.
+    </p>
+    <p>
+        This website shows how calculus can be used to track tumor growth and evaluate treatment effectiveness
+        using graphs and a prediction calculator.
+    </p>
+</section>
 
 </body>
 </html>
