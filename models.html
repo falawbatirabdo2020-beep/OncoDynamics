@@ -3,104 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tumor Growth Models</title>
-
-<style>
-body {
-    margin: 0;
-    background-color: #0d1b2a;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-    background-color: #0a2342;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo img {
-    width: 180px;
-    height: auto;
-    filter: drop-shadow(0 0 14px #72efff);
-    transition: 0.3s;
-}
-.logo img:hover {
-    transform: scale(1.06);
-}
-.nav-links a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #90e0ef;
-    font-size: 22px;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #caf0f8;
-}
-
-/* CONTENT */
-.container {
-    max-width: 1250px;
-    margin: 80px auto;
-    text-align: center;
-}
-.graph-box {
-    background: rgba(255,255,255,0.05);
-    padding: 35px;
-    margin-bottom: 35px;
-    border-radius: 14px;
-    border: 1px solid #1a3d5c;
-}
-.graph-box img {
-    width: 85%;
-    border-radius: 10px;
-}
-h1 {
-    font-size: 46px;
-    margin-bottom: 40px;
-    color: #90e0ef;
-}
-.desc {
-    font-size: 20px;
-    margin-top: 14px;
-}
-</style>
+<title>OncoDynamics - Models</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="Logo">
-    </a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="models.html">Models</a>
+<header class="navbar">
+    <a href="home.html" class="logo-text">OncoDynamics</a>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="models.html" class="active">Models</a>
         <a href="calculator.html">Calculator</a>
-    </div>
+    </nav>
+</header>
+
+<h1 class="page-title">Tumor Growth Models</h1>
+
+<div class="graph-box">
+    <img src="images/growth.png">
+    <p>Rapid exponential tumor growth in absence of treatment.</p>
 </div>
 
-<div class="container">
-    <h1>Tumor Growth Models</h1>
+<div class="graph-box">
+    <img src="images/shrink.png">
+    <p>Treatment reduces the growth rate leading to shrinkage.</p>
+</div>
 
-    <div class="graph-box">
-        <img src="growth.png">
-        <p class="desc">Rapid growth without treatment.</p>
-    </div>
-
-    <div class="graph-box">
-        <img src="shrink.png">
-        <p class="desc">Treatment reduces tumor cells over time.</p>
-    </div>
-
-    <div class="graph-box">
-        <img src="comparison.png">
-        <p class="desc">Clear comparison between treated & untreated tumor.</p>
-    </div>
-
+<div class="graph-box">
+    <img src="images/comparison.png">
+    <p>Comparison reveals treatment success over time.</p>
 </div>
 
 </body>
