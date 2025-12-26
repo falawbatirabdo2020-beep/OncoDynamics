@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading...</title>
+<title>OncoDynamics</title>
 
 <style>
 body {
@@ -15,24 +15,25 @@ body {
     height: 100vh;
 }
 
+/* LOGO Animation */
 .logo {
-    width: 320px;
+    width: 420px;
     opacity: 0;
-    animation: fadeInOut 3s ease-in-out forwards;
+    animation: fadeInOut 8s ease-in-out forwards;
 }
 
 @keyframes fadeInOut {
     0% { opacity: 0; transform: scale(0.7); }
-    40% { opacity: 1; transform: scale(1); }
-    80% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0; transform: scale(0.7); }
+    20% { opacity: 1; transform: scale(1); }
+    60% { opacity: 1; transform: scale(1.12); }
+    100% { opacity: 0; transform: scale(0.85); }
 }
 </style>
 
 <script>
 setTimeout(() => {
-    window.location.href = "index.html"; // Go to main page
-}, 2800); 
+    window.location.href = "index.html";
+}, 8000); // 8 seconds
 </script>
 
 </head>
