@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<script>
+if (!sessionStorage.getItem("splashDone")) {
+    sessionStorage.setItem("splashDone", "true");
+    window.location.href = "splash.html";
+}
+</script>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -84,3 +90,4 @@ p {
 
 </body>
 </html>
+
