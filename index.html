@@ -1,89 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OncoDynamics - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OncoDynamics - Home</title>
 
-<style>
-body {
-    margin: 0;
-    background-color: #0d1b2a;
-    color: white;
-    font-family: Arial, sans-serif;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #061a2b;
+            color: white;
+            text-align: center;
+        }
 
-/* NAVBAR */
-.navbar {
-    background-color: #0a2342;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo img {
-    width: 300px;
-    height: auto;
-    filter: drop-shadow(0 0 14px #72efff);
-    transition: 0.3s;
-}
-.logo img:hover {
-    transform: scale(1.06);
-}
+        .navbar {
+            background-color: #0a2342;
+            padding: 18px 55px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* LINKS */
-.nav-links a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #90e0ef;
-    font-size: 22px;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #caf0f8;
-}
+        .logo img {
+            width: 300px;
+            height: auto;
+            filter: drop-shadow(0 0 18px #72efff);
+            transition: 0.25s;
+        }
 
-/* CONTENT */
-.container {
-    max-width: 1300px;
-    margin: 80px auto;
-    text-align: center;
-    background: rgba(255,255,255,0.05);
-    padding: 50px;
-    border-radius: 14px;
-    border: 1px solid #1a3d5c;
-}
-h1 {
-    font-size: 48px;
-    font-weight: bold;
-    color: #90e0ef;
-}
-p {
-    font-size: 22px;
-    line-height: 1.6;
-}
-</style>
+        .logo img:hover {
+            transform: scale(1.08);
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #72efff;
+        }
+
+        .container {
+            background-color: #0d2e4f;
+            width: 85%;
+            margin: 120px auto;
+            padding: 50px;
+            border-radius: 15px;
+        }
+
+        h1 { color: #79e7ff; font-size: 45px; }
+        p { font-size: 22px; line-height: 1.6; }
+    </style>
+
 </head>
-
 <body>
 
-<div class="navbar">
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="Logo">
-    </a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="models.html">Models</a>
-        <a href="calculator.html">Calculator</a>
-    </div>
-</div>
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="OncoDynamics Logo">
+        </a>
 
-<div class="container">
-    <h1>Modeling Cancer Tumor Growth</h1>
-    <p>Cancer tumors grow when cells divide uncontrollably. Understanding this helps predict behavior and improve treatment success.</p>
-    <p>We visualize tumor dynamics using calculus, graphs & prediction tools.</p>
-</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="calculator.html">Calculator</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Modeling Cancer Tumor Growth</h1>
+
+        <p>
+            Cancer tumors grow when cells divide uncontrollably. 
+            Understanding this mathematically helps doctors predict tumor behavior, 
+            compare different treatments, and save patient lives.
+        </p>
+
+        <p>
+            This website shows how calculus can be used to track tumor growth and evaluate treatment 
+            effectiveness using graphs and a prediction calculator.
+        </p>
+    </div>
 
 </body>
 </html>
-
