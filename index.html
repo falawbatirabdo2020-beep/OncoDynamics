@@ -6,83 +6,83 @@
 <title>OncoDynamics - Home</title>
 
 <style>
-* {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
+body {
+    margin: 0;
+    background-color: #0d1b2a;
+    color: white;
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #071a2e;
-    color: #dff7ff;
-    text-align: center;
-}
-
-/* Navbar */
+/* NAVBAR */
 .navbar {
-    background: #082544;
+    background-color: #0a2342;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 40px;
-    box-shadow: 0 0 10px rgba(0,255,255,.4);
 }
-
-/* LOGO */
 .logo img {
-    height: 70px;
-    width: auto;
-    filter: drop-shadow(0 0 8px #67e8ff);
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0 0 14px #72efff);
+    transition: 0.3s;
+}
+.logo img:hover {
+    transform: scale(1.06);
 }
 
-/* Menu */
-nav a {
-    color: #8fe5ff;
-    font-size: 22px;
+/* LINKS */
+.nav-links a {
+    margin: 0 20px;
     text-decoration: none;
-    margin-left: 32px;
-    transition: .3s;
+    color: #90e0ef;
+    font-size: 22px;
+    font-weight: bold;
 }
-nav a:hover, nav a.active {
-    color: #ffffff;
+.nav-links a:hover {
+    color: #caf0f8;
 }
 
-/* Hero text */
-.hero {
-    padding: 80px 12%;
+/* CONTENT */
+.container {
+    max-width: 1300px;
+    margin: 80px auto;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    padding: 50px;
+    border-radius: 14px;
+    border: 1px solid #1a3d5c;
 }
-.hero h1 {
-    font-size: 45px;
-    margin-bottom: 25px;
-    color: #80e8ff;
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #90e0ef;
 }
-.hero p {
+p {
     font-size: 22px;
     line-height: 1.6;
-    margin-bottom: 18px;
 }
 </style>
-
 </head>
+
 <body>
 
-<header class="navbar">
-    <a class="logo" href="index.html">
-        <img src="images/logo.png" alt="logo">
+<div class="navbar">
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
     </a>
-
-    <nav>
-        <a class="active" href="index.html">Home</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
-    </nav>
-</header>
+    </div>
+</div>
 
-<section class="hero">
+<div class="container">
     <h1>Modeling Cancer Tumor Growth</h1>
-    <p>Understanding tumor behavior using calculus helps doctors predict growth, improve treatment, and save lives.</p>
-    <p>This website provides tumor growth graphs and a calculator to estimate tumor size over time.</p>
-</section>
+    <p>Cancer tumors grow when cells divide uncontrollably. Understanding this helps predict behavior and improve treatment success.</p>
+    <p>We visualize tumor dynamics using calculus, graphs & prediction tools.</p>
+</div>
 
 </body>
 </html>
