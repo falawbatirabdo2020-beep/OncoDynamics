@@ -3,102 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tumor Growth Models</title>
+<title>OncoDynamics - Models</title>
 
 <style>
-body {
-    margin: 0;
-    background-color: #0d1b2a;
-    color: white;
-    font-family: Arial, sans-serif;
-}
+    body {
+        margin: 0;
+        background-color: #061a2b;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+    }
 
-/* NAVBAR */
-.navbar {
-    background-color: #0a2342;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo img {
-    width: 180px;
-    height: auto;
-    filter: drop-shadow(0 0 14px #72efff);
-    transition: 0.3s;
-}
-.logo img:hover {
-    transform: scale(1.06);
-}
-.nav-links a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #90e0ef;
-    font-size: 22px;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #caf0f8;
-}
+    .navbar {
+        background-color: #0a2342;
+        padding: 18px 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-/* CONTENT */
-.container {
-    max-width: 1250px;
-    margin: 80px auto;
-    text-align: center;
-}
-.graph-box {
-    background: rgba(255,255,255,0.05);
-    padding: 35px;
-    margin-bottom: 35px;
-    border-radius: 14px;
-    border: 1px solid #1a3d5c;
-}
-.graph-box img {
-    width: 85%;
-    border-radius: 10px;
-}
-h1 {
-    font-size: 46px;
-    margin-bottom: 40px;
-    color: #90e0ef;
-}
-.desc {
-    font-size: 20px;
-    margin-top: 14px;
-}
+    .logo img {
+        width: 300px;
+        height: auto;
+        filter: drop-shadow(0 0 18px #72efff);
+        transition: 0.25s;
+    }
+
+    .logo img:hover {
+        transform: scale(1.08);
+    }
+
+    .nav-links a {
+        margin-left: 30px;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .container {
+        width: 90%;
+        margin: 120px auto;
+    }
+
+    .graph-box {
+        background-color: #0d2e4f;
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 40px;
+    }
+
+    .graph-box img {
+        width: 85%;
+        border-radius: 10px;
+    }
+
+    p {
+        font-size: 22px;
+        margin-top: 15px;
+    }
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="navbar">
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="Logo">
-    </a>
+<header class="navbar">
+    <a href="index.html" class="logo"><img src="logo.png"></a>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
     </div>
-</div>
+</header>
 
 <div class="container">
-    <h1>Tumor Growth Models</h1>
 
     <div class="graph-box">
         <img src="growth.png">
-        <p class="desc">Rapid growth without treatment.</p>
+        <p>Rapid exponential growth in tumor size without treatment.</p>
     </div>
 
     <div class="graph-box">
         <img src="shrink.png">
-        <p class="desc">Treatment reduces tumor cells over time.</p>
+        <p>Treatment causes tumor shrinkage as growth reduces.</p>
     </div>
 
     <div class="graph-box">
         <img src="comparison.png">
-        <p class="desc">Clear comparison between treated & untreated tumor.</p>
+        <p>Comparing growth with and without treatment shows therapy success.</p>
     </div>
 
 </div>
