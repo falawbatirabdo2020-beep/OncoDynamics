@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tumor Growth Calculator</title>
 
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
 body {
     margin: 0;
     background-color: #0d1b2a;
     color: white;
     font-family: Arial, sans-serif;
+    text-align: center;
 }
+
 .navbar {
     background-color: #0a2342;
     padding: 15px 40px;
@@ -23,58 +28,69 @@ body {
     font-size: 38px;
     font-weight: bold;
     color: #90e0ef;
-    text-shadow: 0 0 10px #72efff;
 }
 .nav-links a {
+    margin: 0 20px;
     color: #90e0ef;
     font-size: 22px;
-    margin: 0 20px;
     text-decoration: none;
 }
+
+/* Calculator Box */
 .calculator {
     width: 70%;
-    margin: 100px auto;
-    text-align: center;
+    margin: 80px auto;
+    padding: 35px;
     background: rgba(255,255,255,0.05);
-    padding: 40px;
     border-radius: 15px;
 }
+
 input {
     width: 60%;
     padding: 12px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 10px;
     border: none;
 }
+
+select {
+    width: 65%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
 button {
     margin-top: 20px;
-    padding: 14px 30px;
+    padding: 12px 28px;
     background-color: #0077b6;
     color: white;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
     border-radius: 10px;
 }
-#result {
-    margin-top: 20px;
+button:hover {
+    background-color: #0096c7;
+}
+
+#result-text {
     font-size: 22px;
-    color: #90e0ef;
+    margin-top: 20px;
+}
+
+canvas {
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 30px;
 }
 </style>
-
-<script>
-function calc() {
-    let d = document.getElementById("days").value;
-    if (d === "") return;
-    let result = 500 * Math.exp(0.15 * d);
-    document.getElementById("result").innerText =
-        "Predicted Tumor Cells: " + Math.round(result);
-}
-</script>
 
 </head>
 <body>
 
+<!-- Navbar -->
 <div class="navbar">
     <a href="index.html" class="logo-text">OncoDynamics</a>
     <div class="nav-links">
@@ -84,12 +100,93 @@ function calc() {
     </div>
 </div>
 
+<!-- Calculator Section -->
 <div class="calculator">
-    <h1>Tumor Growth Calculator</h1>
-    <input type="number" id="days" placeholder="Enter days...">
-    <button onclick="calc()">Calculate</button>
-    <p id="result"></p>
+    <h2>Tumor Growth Prediction</h2>
+
+    <input type="number" id="days" placeholder="Enter number of days">
+    <select id="treatment">
+        <option value="no">No Treatment</option>
+        <option value="yes">With Treatment</option>
+    </select>
+    <br>
+    <button onclick="calculate()">Predict</button>
+
+    <p id="result-text"></p>
+
+    <canvas id="tumorChart"></canvas>
 </div>
+
+<script>
+let chart = null;
+const N0 = 1000;
+
+function calculate() {
+    let days = document.getElementById("days").value;
+    let treatment = document.getElementById("treatment").value;
+
+    if (days === "" || days < 0) return;
+
+    let growthRate = treatment === "yes" ? -0.08 : 0.12;
+    let data = [];
+    let labels = [];
+
+    for (let t = 0; t <= days; t++) {
+        let N = N0 * Math.exp(growthRate * t);
+        data.push(Math.round(N));
+        labels.push(t);
+    }
+
+    let finalValue = data[data.length - 1];
+    let percentChange = ((finalValue - N0) / N0 * 100).toFixed(1);
+
+    let resultText = document.getElementById("result-text");
+    if (finalValue > N0) {
+        resultText.style.color = "#ff4d4d";
+        resultText.innerText = `Tumor increased by ${percentChange}% → Condition worsening`;
+    } else {
+        resultText.style.color = "#80ff80";
+        resultText.innerText = `Tumor decreased by ${Math.abs(percentChange)}% → Treatment effective`;
+    }
+
+    if (chart) chart.destroy();
+
+    const ctx = document.getElementById('tumorChart').getContext('2d');
+
+    chart = new Chart(ctx, {
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    type: 'line',
+                    label: 'Tumor Trend',
+                    data: data,
+                    borderColor: '#0077b6',
+                    borderWidth: 3,
+                    tension: 0.3
+                },
+                {
+                    type: 'bar',
+                    label: 'Daily Representation',
+                    data: data,
+                    backgroundColor: 'rgba(0, 153, 255, 0.4)'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    title: { display: true, text: 'Cells Count' }
+                },
+                x: {
+                    title: { display: true, text: 'Days' }
+                }
+            }
+        }
+    });
+}
+</script>
 
 </body>
 </html>
