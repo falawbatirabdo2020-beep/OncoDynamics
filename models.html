@@ -2,91 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>OncoDynamics | Models</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumor Growth Models</title>
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0D1117;
-    color: #E6EDF3;
     margin: 0;
-    text-align: center;
+    background-color: #0d1b2a;
+    color: white;
+    font-family: Arial, sans-serif;
 }
-header {
-    background-color: #161B22;
-    padding: 20px;
-    color: #58A6FF;
-    font-size: 28px;
-    font-weight: bold;
+.navbar {
+    background-color: #0a2342;
+    padding: 18px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-nav a {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
     text-decoration: none;
-    color: #E6EDF3;
-    margin: 0 15px;
-    font-size: 20px;
-    transition: 0.3s;
 }
-nav a:hover {
-    color: #58A6FF;
-    text-shadow: 0 0 10px #58A6FF;
+.logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
 }
-h1 {
-    font-size: 38px;
-    margin-top: 40px;
-    color: #58A6FF;
+.nav-links a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #90e0ef;
+    font-size: 18px;
+    font-weight: bold;
+}
+.nav-links a:hover {
+    color: #caf0f8;
+}
+.container {
+    max-width: 1250px;
+    margin: 70px auto;
+    text-align: center;
 }
 .graph-box {
-    width: 80%;
-    margin: 40px auto;
-    background: #161B22;
-    padding: 25px;
-    border-radius: 12px;
-    border: 2px solid #30363D;
-    box-shadow: 0 0 25px rgba(88, 166, 255, 0.10);
+    background: rgba(255,255,255,0.05);
+    padding: 35px;
+    margin-bottom: 35px;
+    border-radius: 14px;
+    border: 1px solid #1a3d5c;
 }
 .graph-box img {
-    width: 75%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    filter: brightness(1.2) contrast(1.1);
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.25);
+    width: 85%;
+    border-radius: 10px;
+}
+h1 {
+    font-size: 46px;
+    margin-bottom: 40px;
+    color: #90e0ef;
 }
 .desc {
     font-size: 20px;
-    color: #C9D1D9;
+    margin-top: 14px;
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <div>OncoDynamics</div>
-    <nav>
+<div class="navbar">
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+        <span>OncoDynamics</span>
+    </a>
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
-    </nav>
-</header>
-
-<h1>Tumor Growth Models</h1>
-
-<div class="graph-box">
-    <img src="growth.png" alt="Growth Model">
-    <p class="desc">Rapid exponential growth in tumor size without treatment.</p>
+    </div>
 </div>
 
-<div class="graph-box">
-    <img src="shrink.png" alt="Shrink Model">
-    <p class="desc">Treatment causes tumor shrinkage due to reduced cell division.</p>
-</div>
+<div class="container">
+    <h1>Tumor Growth Models</h1>
 
-<div class="graph-box">
-    <img src="comparison.png" alt="Comparison Model">
-    <p class="desc">Comparison shows how treatment controls growth over time.</p>
+    <div class="graph-box">
+        <img src="growth.png" alt="Tumor Growth Graph">
+        <p class="desc">Rapid exponential growth in tumor size without treatment due to uncontrolled cell division.</p>
+    </div>
+
+    <div class="graph-box">
+        <img src="shrink.png" alt="Tumor Shrinkage Graph">
+        <p class="desc">Treatment helps the tumor shrink as the growth rate becomes negative.</p>
+    </div>
+
+    <div class="graph-box">
+        <img src="comparison.png" alt="Comparison Graph">
+        <p class="desc">Comparing conditions clearly shows treatment success in reducing tumor size.</p>
+    </div>
+
 </div>
 
 </body>
