@@ -3,121 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tumor Growth Calculator</title>
-
-<style>
-body {
-    margin: 0;
-    background-color: #0d1b2a;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-    background-color: #0a2342;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo img {
-    width: 180px;
-    height: auto;
-    filter: drop-shadow(0 0 14px #72efff);
-    transition: 0.3s;
-    margin-top: 6px;
-}
-.logo img:hover {
-    transform: scale(1.06);
-}
-.nav-links a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #90e0ef;
-    font-size: 22px;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #caf0f8;
-}
-
-/* INPUT BOX */
-.container {
-    max-width: 700px;
-    margin: 110px auto;
-    background: rgba(255,255,255,0.05);
-    padding: 45px;
-    border-radius: 14px;
-    border: 1px solid #1a3d5c;
-    text-align: center;
-}
-input {
-    width: 80%;
-    font-size: 20px;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    margin-bottom: 20px;
-}
-button {
-    background-color: #0077b6;
-    border: none;
-    padding: 14px 24px;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-button:hover {
-    background-color: #0096c7;
-}
-#result {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 22px;
-    color: #90e0ef;
-}
-</style>
-
-<script>
-function calculateTumorGrowth() {
-    let days = document.getElementById("daysInput").value;
-    if(days === "" || days < 0) {
-        document.getElementById("result").innerHTML =
-        "Enter a valid number of days.";
-        return;
-    }
-    let initialCells = 500;
-    let growthRate = 0.15;
-    let result = initialCells * Math.exp(growthRate * days);
-    document.getElementById("result").innerHTML =
-    "Predicted Tumor Cells: " + Math.round(result);
-}
-</script>
-
+<title>OncoDynamics - Calculator</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="Logo">
-    </a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
+<header class="navbar">
+    <a href="home.html" class="logo-text">OncoDynamics</a>
+    <nav>
+        <a href="home.html">Home</a>
         <a href="models.html">Models</a>
-        <a href="calculator.html">Calculator</a>
-    </div>
-</div>
+        <a href="calculator.html" class="active">Calculator</a>
+    </nav>
+</header>
 
-<div class="container">
-    <h1>Tumor Growth Prediction Calculator</h1>
+<section class="calculator">
+    <h2>Tumor Growth Prediction</h2>
+
     <input type="number" id="daysInput" placeholder="Enter days...">
-    <button onclick="calculateTumorGrowth()">Calculate</button>
+    <button onclick="calculate()">Calculate</button>
+
     <p id="result"></p>
-</div>
+</section>
+
+<script>
+function calculate() {
+    let d = document.getElementById("daysInput").value;
+    if (d === "") return;
+    let result = 500 * Math.exp(0.15 * d);
+    document.getElementById("result").innerText =
+        "Estimated Tumor Cells: " + Math.round(result);
+}
+</script>
 
 </body>
 </html>
