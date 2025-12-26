@@ -3,39 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OncoDynamics - Calculator</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Tumor Growth Calculator</title>
 
-<body>
-
-<header class="navbar">
-    <a href="home.html" class="logo-text">OncoDynamics</a>
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="models.html">Models</a>
-        <a href="calculator.html" class="active">Calculator</a>
-    </nav>
-</header>
-
-<section class="calculator">
-    <h2>Tumor Growth Prediction</h2>
-
-    <input type="number" id="daysInput" placeholder="Enter days...">
-    <button onclick="calculate()">Calculate</button>
-
-    <p id="result"></p>
-</section>
+<style>
+body {
+    margin: 0;
+    background-color: #0d1b2a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #0a2342;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-text {
+    font-size: 38px;
+    font-weight: bold;
+    color: #90e0ef;
+    text-shadow: 0 0 10px #72efff;
+}
+.nav-links a {
+    color: #90e0ef;
+    font-size: 22px;
+    margin: 0 20px;
+    text-decoration: none;
+}
+.calculator {
+    width: 70%;
+    margin: 100px auto;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 15px;
+}
+input {
+    width: 60%;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+}
+button {
+    margin-top: 20px;
+    padding: 14px 30px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    font-size: 22px;
+    border-radius: 10px;
+}
+#result {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #90e0ef;
+}
+</style>
 
 <script>
-function calculate() {
-    let d = document.getElementById("daysInput").value;
+function calc() {
+    let d = document.getElementById("days").value;
     if (d === "") return;
     let result = 500 * Math.exp(0.15 * d);
     document.getElementById("result").innerText =
-        "Estimated Tumor Cells: " + Math.round(result);
+        "Predicted Tumor Cells: " + Math.round(result);
 }
 </script>
+
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html" class="logo-text">OncoDynamics</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="models.html">Models</a>
+        <a href="calculator.html">Calculator</a>
+    </div>
+</div>
+
+<div class="calculator">
+    <h1>Tumor Growth Calculator</h1>
+    <input type="number" id="days" placeholder="Enter days...">
+    <button onclick="calc()">Calculate</button>
+    <p id="result"></p>
+</div>
 
 </body>
 </html>
