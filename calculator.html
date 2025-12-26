@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OncoDynamics | Calculator</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EAF4FF;
+    text-align: center;
+    margin: 0;
+}
+header {
+    background-color: #0A4D9C;
+    padding: 20px;
+    color: white;
+    font-size: 26px;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.container {
+    margin-top: 40px;
+    background: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #0A4D9C;
+}
+input {
+    padding: 10px;
+    width: 50%;
+    font-size: 18px;
+    margin-top: 15px;
+}
+button {
+    padding: 10px 20px;
+    background: #0A4D9C;
+    color: white;
+    border: none;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background: #08345C;
+}
+#result {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #08345C;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    OncoDynamics
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="models.html">Models</a>
+        <a href="calculator.html">Calculator</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Tumor Growth Prediction Calculator</h2>
+    <p>Enter number of days to calculate tumor cell count:</p>
+
+    <input type="number" id="days" placeholder="Enter days...">
+    <br>
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculate() {
+    const t = document.getElementById("days").value;
+    if (t === "" || t < 0) {
+        document.getElementById("result").innerText = "Enter a valid number!";
+        return;
+    }
+    const N = 500 * Math.exp(0.18 * t);
+    document.getElementById("result").innerText =
+        "Estimated Tumor Cells: " + Math.round(N).toLocaleString();
+}
+</script>
+
+</body>
+</html>
