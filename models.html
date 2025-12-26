@@ -7,51 +7,56 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    background-color: #EAF4FF;
+    background-color: #0D1117;
+    color: #E6EDF3;
     margin: 0;
     text-align: center;
 }
 header {
-    background-color: #0A4D9C;
+    background-color: #161B22;
     padding: 20px;
-    color: white;
+    color: #58A6FF;
     font-size: 28px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 nav a {
     text-decoration: none;
-    color: white;
+    color: #E6EDF3;
     margin: 0 15px;
     font-size: 20px;
+    transition: 0.3s;
 }
-.container {
-    width: 80%;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border: 3px solid #0A4D9C;
-    border-radius: 12px;
+nav a:hover {
+    color: #58A6FF;
+    text-shadow: 0 0 10px #58A6FF;
 }
 h1 {
-    color: #0A4D9C;
-    margin-bottom: 10px;
     font-size: 38px;
+    margin-top: 40px;
+    color: #58A6FF;
 }
 .graph-box {
-    border: 2px solid #0A4D9C;
+    width: 80%;
+    margin: 40px auto;
+    background: #161B22;
+    padding: 25px;
     border-radius: 12px;
-    padding: 20px;
-    margin: 25px 0;
-    background: #F8FBFF;
+    border: 2px solid #30363D;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.10);
 }
 .graph-box img {
-    width: 65%;
-    border-radius: 10px;
+    width: 75%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    filter: brightness(1.2) contrast(1.1);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.25);
 }
 .desc {
-    margin-top: 12px;
     font-size: 20px;
-    color: #08345C;
+    color: #C9D1D9;
 }
 </style>
 </head>
@@ -59,7 +64,7 @@ h1 {
 <body>
 
 <header>
-    OncoDynamics
+    <div>OncoDynamics</div>
     <nav>
         <a href="index.html">Home</a>
         <a href="models.html">Models</a>
@@ -67,32 +72,21 @@ h1 {
     </nav>
 </header>
 
-<div class="container">
-
 <h1>Tumor Growth Models</h1>
-<p>Here we compare cancer behavior with and without treatment using exponential models and calculus visualization.</p>
 
 <div class="graph-box">
-    <img src="growth.png" alt="Tumor Growth Graph">
-    <p class="desc">
-        Rapid exponential growth in tumor size without treatment due to uncontrolled cell division.
-    </p>
+    <img src="growth.png" alt="Growth Model">
+    <p class="desc">Rapid exponential growth in tumor size without treatment.</p>
 </div>
 
 <div class="graph-box">
-    <img src="shrink.png" alt="Tumor Shrinkage Graph">
-    <p class="desc">
-        Treatment helps the tumor shrink as the growth rate becomes negative.
-    </p>
+    <img src="shrink.png" alt="Shrink Model">
+    <p class="desc">Treatment causes tumor shrinkage due to reduced cell division.</p>
 </div>
 
 <div class="graph-box">
-    <img src="comparison.png" alt="Growth vs Treatment Comparison Graph">
-    <p class="desc">
-        Comparing both conditions clearly shows treatment success in reducing tumor size over time.
-    </p>
-</div>
-
+    <img src="comparison.png" alt="Comparison Model">
+    <p class="desc">Comparison shows how treatment controls growth over time.</p>
 </div>
 
 </body>
