@@ -6,37 +6,52 @@
 
 <style>
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #EAF4FF;
+    margin: 0;
     text-align: center;
 }
 header {
     background-color: #0A4D9C;
     padding: 20px;
     color: white;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
 }
 nav a {
-    color: white;
     text-decoration: none;
+    color: white;
     margin: 0 15px;
     font-size: 20px;
 }
-.graph-box {
+.container {
     width: 80%;
-    margin: 30px auto;
+    margin: 40px auto;
     background: white;
+    padding: 30px;
+    border: 3px solid #0A4D9C;
+    border-radius: 12px;
+}
+h1 {
+    color: #0A4D9C;
+    margin-bottom: 10px;
+    font-size: 38px;
+}
+.graph-box {
     border: 2px solid #0A4D9C;
+    border-radius: 12px;
     padding: 20px;
-    border-radius: 10px;
+    margin: 25px 0;
+    background: #F8FBFF;
 }
 .graph-box img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    width: 65%;
+    border-radius: 10px;
+}
+.desc {
+    margin-top: 12px;
+    font-size: 20px;
+    color: #08345C;
 }
 </style>
 </head>
@@ -52,25 +67,32 @@ nav a {
     </nav>
 </header>
 
-<h1 style="color:#0A4D9C;margin-top:35px;">Tumor Growth Models</h1>
+<div class="container">
 
-<p style="font-size:20px;width:80%;margin:auto;color:#08345C;">
-We compare tumor growth with and without treatment using exponential models and calculus.
-</p>
+<h1>Tumor Growth Models</h1>
+<p>Here we compare cancer behavior with and without treatment using exponential models and calculus visualization.</p>
 
 <div class="graph-box">
-    <img src="images/growth.png" alt="Growth Model">
-    <p>Rapid exponential growth in tumor size without treatment.</p>
+    <img src="growth.png" alt="Tumor Growth Graph">
+    <p class="desc">
+        Rapid exponential growth in tumor size without treatment due to uncontrolled cell division.
+    </p>
 </div>
 
 <div class="graph-box">
-    <img src="images/shrink.png" alt="Shrink Model">
-    <p>Treatment reduces tumor growth leading to shrinkage.</p>
+    <img src="shrink.png" alt="Tumor Shrinkage Graph">
+    <p class="desc">
+        Treatment helps the tumor shrink as the growth rate becomes negative.
+    </p>
 </div>
 
 <div class="graph-box">
-    <img src="images/comparison.png" alt="Comparison Model">
-    <p>Comparison shows successful treatment effect over time.</p>
+    <img src="comparison.png" alt="Growth vs Treatment Comparison Graph">
+    <p class="desc">
+        Comparing both conditions clearly shows treatment success in reducing tumor size over time.
+    </p>
+</div>
+
 </div>
 
 </body>
