@@ -4,17 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OncoDynamics - Home</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
+<style>
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #071a2e;
+    color: #dff7ff;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    background: #082544;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    box-shadow: 0 0 10px rgba(0,255,255,.4);
+}
+
+/* LOGO */
+.logo img {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 0 8px #67e8ff);
+}
+
+/* Menu */
+nav a {
+    color: #8fe5ff;
+    font-size: 22px;
+    text-decoration: none;
+    margin-left: 32px;
+    transition: .3s;
+}
+nav a:hover, nav a.active {
+    color: #ffffff;
+}
+
+/* Hero text */
+.hero {
+    padding: 80px 12%;
+}
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 25px;
+    color: #80e8ff;
+}
+.hero p {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+</style>
+
+</head>
 <body>
 
 <header class="navbar">
-    <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="OncoDynamics Logo">
+    <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="logo">
     </a>
+
     <nav>
-        <a href="index.html" class="active">Home</a>
+        <a class="active" href="index.html">Home</a>
         <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
     </nav>
@@ -22,14 +80,8 @@
 
 <section class="hero">
     <h1>Modeling Cancer Tumor Growth</h1>
-    <p>
-        Cancer tumors grow when cells divide uncontrollably. Understanding this mathematically helps doctors
-        predict tumor behavior, compare different treatments, and save patient lives.
-    </p>
-    <p>
-        This website shows how calculus can be used to track tumor growth and evaluate treatment effectiveness
-        using graphs and a prediction calculator.
-    </p>
+    <p>Understanding tumor behavior using calculus helps doctors predict growth, improve treatment, and save lives.</p>
+    <p>This website provides tumor growth graphs and a calculator to estimate tumor size over time.</p>
 </section>
 
 </body>
