@@ -4,84 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OncoDynamics - Home</title>
-<style>
-body {
-    margin: 0;
-    background-color: #0d1b2a;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-    background-color: #0a2342;
-    padding: 0px 40px;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo img {
-    height: 140px;
-    width: auto;
-    filter: drop-shadow(0 0 18px #72efff);
-    transition: 0.3s;
-}
-.logo img:hover {
-    transform: scale(1.08);
-}
-
-/* LINKS */
-.nav-links a {
-    margin: 0 18px;
-    text-decoration: none;
-    color: #90e0ef;
-    font-size: 22px;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #caf0f8;
-}
-
-/* CONTENT */
-.container {
-    max-width: 1300px;
-    margin: 70px auto;
-    text-align: center;
-    background: rgba(255,255,255,0.05);
-    padding: 50px;
-    border-radius: 14px;
-    border: 1px solid #1a3d5c;
-}
-h1 {
-    font-size: 48px;
-    font-weight: bold;
-    color: #90e0ef;
-}
-p {
-    font-size: 22px;
-    line-height: 1.6;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="navbar">
-    <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Logo">
-    </a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
+<header class="navbar">
+    <a href="home.html" class="logo-text">OncoDynamics</a>
+    <nav>
+        <a href="home.html" class="active">Home</a>
         <a href="models.html">Models</a>
         <a href="calculator.html">Calculator</a>
-    </div>
-</div>
+    </nav>
+</header>
 
-<div class="container">
+<section class="container">
     <h1>Modeling Cancer Tumor Growth</h1>
     <p>Cancer tumors grow when cells divide uncontrollably. Understanding this helps predict tumor behavior and improve treatment success.</p>
     <p>We visualize tumor dynamics using calculus, graphs & prediction tools.</p>
-</div>
+</section>
 
 </body>
 </html>
