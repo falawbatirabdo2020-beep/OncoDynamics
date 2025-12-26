@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tumor Growth Models</title>
+
 <style>
 body {
     margin: 0;
@@ -11,40 +12,39 @@ body {
     color: white;
     font-family: Arial, sans-serif;
 }
+
+/* NAVBAR */
 .navbar {
     background-color: #0a2342;
-    padding: 18px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-}
 .logo img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 14px #72efff);
+    transition: 0.3s;
+}
+.logo img:hover {
+    transform: scale(1.06);
 }
 .nav-links a {
-    margin: 0 18px;
+    margin: 0 20px;
     text-decoration: none;
     color: #90e0ef;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
 }
 .nav-links a:hover {
     color: #caf0f8;
 }
+
+/* CONTENT */
 .container {
     max-width: 1250px;
-    margin: 70px auto;
+    margin: 80px auto;
     text-align: center;
 }
 .graph-box {
@@ -69,12 +69,12 @@ h1 {
 }
 </style>
 </head>
+
 <body>
 
 <div class="navbar">
     <a href="index.html" class="logo">
         <img src="logo.png" alt="Logo">
-        <span>OncoDynamics</span>
     </a>
     <div class="nav-links">
         <a href="index.html">Home</a>
@@ -87,18 +87,18 @@ h1 {
     <h1>Tumor Growth Models</h1>
 
     <div class="graph-box">
-        <img src="growth.png" alt="Tumor Growth Graph">
-        <p class="desc">Rapid exponential growth in tumor size without treatment due to uncontrolled cell division.</p>
+        <img src="growth.png">
+        <p class="desc">Rapid growth without treatment.</p>
     </div>
 
     <div class="graph-box">
-        <img src="shrink.png" alt="Tumor Shrinkage Graph">
-        <p class="desc">Treatment helps the tumor shrink as the growth rate becomes negative.</p>
+        <img src="shrink.png">
+        <p class="desc">Treatment reduces tumor cells over time.</p>
     </div>
 
     <div class="graph-box">
-        <img src="comparison.png" alt="Comparison Graph">
-        <p class="desc">Comparing conditions clearly shows treatment success in reducing tumor size.</p>
+        <img src="comparison.png">
+        <p class="desc">Clear comparison between treated & untreated tumor.</p>
     </div>
 
 </div>
