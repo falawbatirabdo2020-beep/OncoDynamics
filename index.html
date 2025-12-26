@@ -7,37 +7,49 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    background-color: #EAF4FF;
+    background-color: #0D1117;
+    color: #E6EDF3;
     margin: 0;
     text-align: center;
 }
 header {
-    background-color: #0A4D9C;
+    background-color: #161B22;
     padding: 20px;
-    color: white;
+    color: #58A6FF;
     font-size: 28px;
     font-weight: bold;
-}
-nav {
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 nav a {
     text-decoration: none;
-    color: white;
+    color: #E6EDF3;
     margin: 0 15px;
     font-size: 20px;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #58A6FF;
+    text-shadow: 0 0 10px #58A6FF;
+}
+.container {
+    width: 80%;
+    margin: 60px auto;
+    background: #161B22;
+    padding: 40px;
+    border: 2px solid #30363D;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.15);
 }
 h1 {
-    margin-top: 50px;
-    font-size: 40px;
-    color: #0A4D9C;
+    color: #58A6FF;
+    font-size: 42px;
+    margin-bottom: 20px;
 }
 p {
-    width: 75%;
-    margin: 20px auto;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.6;
-    color: #08345C;
 }
 </style>
 </head>
@@ -45,7 +57,7 @@ p {
 <body>
 
 <header>
-    OncoDynamics
+    <div>OncoDynamics</div>
     <nav>
         <a href="index.html">Home</a>
         <a href="models.html">Models</a>
@@ -53,13 +65,21 @@ p {
     </nav>
 </header>
 
-<h1>Modeling Cancer Tumor Growth</h1>
+<div class="container">
 
-<p>Cancer tumors grow when cells divide uncontrollably. Understanding this mathematically
-helps doctors predict tumor behavior, compare different treatments, and save patient lives.</p>
+    <h1>Modeling Cancer Tumor Growth</h1>
 
-<p>This website shows how calculus can be used to track tumor growth and evaluate treatment
-effectiveness through graphs and a prediction tool.</p>
+    <p>
+        Cancer tumors grow when cells divide uncontrollably. Understanding this mathematically helps
+        doctors predict tumor behavior, compare different treatments, and save patient lives.
+    </p>
+    
+    <p>
+        This website shows how calculus can be used to track tumor growth and evaluate treatment 
+        effectiveness using graphs and a prediction calculator.
+    </p>
+
+</div>
 
 </body>
 </html>
