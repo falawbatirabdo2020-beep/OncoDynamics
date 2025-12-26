@@ -2,36 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>OncoDynamics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
 
 <style>
-    body {
-        margin: 0;
-        background-color: #0d1b2a;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    img {
-        width: 320px;
-        filter: drop-shadow(0 0 22px #72efff);
-        animation: fade 1.8s infinite alternate;
-    }
-    @keyframes fade {
-        from { opacity: 0.4; }
-        to { opacity: 1; }
-    }
+body {
+    margin: 0;
+    background: #0d1b2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    width: 320px;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.7); }
+    40% { opacity: 1; transform: scale(1); }
+    80% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0; transform: scale(0.7); }
+}
 </style>
 
 <script>
 setTimeout(() => {
-    window.location.href = "index.html";
-}, 2600);
+    window.location.href = "index.html"; // Go to main page
+}, 2800); 
 </script>
-</head>
 
+</head>
 <body>
-    <img src="logo.png" alt="OncoDynamics">
+    <img src="logo.png" class="logo" alt="OncoDynamics Logo">
 </body>
 </html>
